@@ -22,15 +22,10 @@ public class TargetAnimation : MonoBehaviour
     public bool GetIsAnimatingUp() { return _isAnimatingUp; }
     [SerializeField]
     private Lifes _lifes;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
+        //if animating, animate up or down
         if (_hasToAnimate)
         {
             _elapsedTime = 0.0f;
@@ -41,6 +36,7 @@ public class TargetAnimation : MonoBehaviour
         }
         else
         {
+            //if the target is up and player takes too long remove life and animate down
             if (_isAnimatingUp)
             {
                 _elapsedTime += Time.deltaTime;

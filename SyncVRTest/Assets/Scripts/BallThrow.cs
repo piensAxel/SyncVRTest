@@ -29,11 +29,14 @@ public class BallThrow : MonoBehaviour
 
     private void Update()
     {
+        //if the player can throw the ball move across a parabola to the target
         if (_canThrowBall)
         {
             _elapsedTime += Time.deltaTime;
             _rb.MovePosition(Parabola(_height, _elapsedTime / _timeOfThrow));
+            //rotate ball when throwing
             RotateBall();
+            //if the target is already gone reset ball
             if (_elapsedTime > _timeOfThrow +0.2f)
                 ResetBall();
         }
@@ -60,6 +63,7 @@ public class BallThrow : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // if the ball hits target, animate it down, add point and play particle
         if (other.gameObject.tag == "Target")
         {
             _scoreComp.ScoreUpdate();

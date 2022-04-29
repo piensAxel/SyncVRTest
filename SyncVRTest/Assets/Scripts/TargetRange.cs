@@ -20,6 +20,7 @@ public class TargetRange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //choose a random target to come up
         _elapsedTime += Time.deltaTime;
         if(_elapsedTime > _timeBetweenTargetUp)
         {
@@ -48,6 +49,7 @@ public class TargetRange : MonoBehaviour
 
     public void ResetRange()
     {
+        //reset all targets and values
         _timeBetweenTargetUp = _cachedTimeBetweenTargetUp;
         //will make a target move up straight away
         _elapsedTime = _cachedTimeBetweenTargetUp;
