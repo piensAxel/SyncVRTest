@@ -1,4 +1,4 @@
-# SyncVR
+# SyncVRTest
  
 Fair tent mini game.
 Player has to press the targets that appear, and this throws a ball towards the target.
