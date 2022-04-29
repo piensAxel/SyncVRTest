@@ -14,7 +14,8 @@ public class TargetAnimation : MonoBehaviour
     [SerializeField]
     private float _timeToShoot = 3.0f;
     private float _elapsedTime = 0.0f;
-
+    [SerializeField]
+    private ParticleSystem _stars;
     public void SetHasToAnimate(bool hasToAnimate) { _hasToAnimate = hasToAnimate; }
     public bool GetHasToAnimate() { return _hasToAnimate; }
     public void SetIsAnimatingUp(bool isAnimatingUp) { _isAnimatingUp = isAnimatingUp; }
@@ -64,5 +65,10 @@ public class TargetAnimation : MonoBehaviour
         transform.rotation = rot;
         if (transform.rotation == Quaternion.identity)
             _hasToAnimate = false;
+    }
+
+    public void PlayParticle()
+    {
+        _stars.Play();
     }
 }

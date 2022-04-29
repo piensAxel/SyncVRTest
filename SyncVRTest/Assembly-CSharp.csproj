@@ -56,10 +56,12 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\TargetAnimation.cs" />
     <Compile Include="Assets\Scripts\TargetClick.cs" />
     <Compile Include="Assets\Scripts\Score.cs" />
-    <Compile Include="Assets\Scripts\TargetAnimation.cs" />
     <Compile Include="Assets\Scripts\TargetRange.cs" />
+    <Compile Include="Assets\Scripts\BallThrow.cs" />
+    <Compile Include="Assets\Scripts\Menu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

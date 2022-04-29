@@ -13,4 +13,10 @@ public class Score : MonoBehaviour
         ++_score;
         _scoreText.text = _score.ToString();
     }
+
+    public void ReseScore()
+    {
+        _score = 0;
+        _scoreText.text = _score.ToString();
+    }
 }

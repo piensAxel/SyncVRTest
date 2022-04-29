@@ -6,13 +6,10 @@ using System;
 public class TargetClick : MonoBehaviour
 {
     [SerializeField]
-    private Score _scoreComp;
-    [SerializeField]
-    private TargetAnimation _targetAnim;
+    private BallThrow _ball;
     private void OnMouseDown()
     {
-        _scoreComp.ScoreUpdate();
-        _targetAnim.SetHasToAnimate(true);
-        _targetAnim.SetIsAnimatingUp(!_targetAnim.GetHasToAnimate());
+        if(!_ball.GetCanThrowBall())
+            _ball.ThrowBall(transform.position);
     }
 }

@@ -22,6 +22,9 @@ public class TargetRange : MonoBehaviour
         if(_elapsedTime > _timeBetweenTargetUp)
         {
             ChooseRandomTarget();
+            _timeBetweenTargetUp -= 0.1f;
+            if (_timeBetweenTargetUp < 1.5f)
+                _timeBetweenTargetUp = 1.5f;
             _elapsedTime = 0.0f;
         }
     }
