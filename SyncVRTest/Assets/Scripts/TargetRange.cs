@@ -9,9 +9,11 @@ public class TargetRange : MonoBehaviour
     [SerializeField]
     private float _timeBetweenTargetUp = 5.0f;
     private float _elapsedTime = 0.0f;
+    private float _cachedTimeBetweenTargetUp;
     // Start is called before the first frame update
     void Start()
     {
+        _cachedTimeBetweenTargetUp = _timeBetweenTargetUp;
         ChooseRandomTarget();
     }
 
@@ -42,7 +44,16 @@ public class TargetRange : MonoBehaviour
                 hasChosen = true;
             }
         }
-        
+    }
 
+    public void ResetRange()
+    {
+        _timeBetweenTargetUp = _cachedTimeBetweenTargetUp;
+        //will make a target move up straight away
+        _elapsedTime = _cachedTimeBetweenTargetUp;
+        foreach(TargetAnimation target in _targets)
+        {
+            target.ResetTarget();
+        }
     }
 }

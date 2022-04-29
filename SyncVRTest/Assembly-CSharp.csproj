@@ -62,6 +62,7 @@
     <Compile Include="Assets\Scripts\TargetRange.cs" />
     <Compile Include="Assets\Scripts\BallThrow.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
+    <Compile Include="Assets\Scripts\Lifes.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -8,6 +8,7 @@ public class Score : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _scoreText;
     private int _score = 0;
+    public int GetScore() { return _score; }
     public void ScoreUpdate()
     {
         ++_score;

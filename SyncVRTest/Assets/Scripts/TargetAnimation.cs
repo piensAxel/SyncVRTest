@@ -20,6 +20,8 @@ public class TargetAnimation : MonoBehaviour
     public bool GetHasToAnimate() { return _hasToAnimate; }
     public void SetIsAnimatingUp(bool isAnimatingUp) { _isAnimatingUp = isAnimatingUp; }
     public bool GetIsAnimatingUp() { return _isAnimatingUp; }
+    [SerializeField]
+    private Lifes _lifes;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,10 +44,11 @@ public class TargetAnimation : MonoBehaviour
             if (_isAnimatingUp)
             {
                 _elapsedTime += Time.deltaTime;
-                if(_elapsedTime > _timeToShoot)
+                if(_elapsedTime > _timeToShoot)//player was to late
                 {
                     _hasToAnimate = true;
                     _isAnimatingUp = false;
+                    _lifes.RemoveLife();
                 }
             }
         }
@@ -70,5 +73,14 @@ public class TargetAnimation : MonoBehaviour
     public void PlayParticle()
     {
         _stars.Play();
+    }
+
+    public void ResetTarget()
+    {
+        _stars.Stop();
+        _hasToAnimate = false;
+        _isAnimatingUp = false;
+        transform.rotation = Quaternion.identity;
+        _elapsedTime = 0.0f;
     }
 }
